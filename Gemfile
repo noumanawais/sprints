@@ -44,6 +44,8 @@ source 'http://rubygems.org'
 gem "devise"
 gem "cancan"
 gem "jquery-rails"
+gem 'therubyracer'
+gem 'execjs'
 #gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 #gem "capybara", :group => [:development, :test]
 gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails.git'
