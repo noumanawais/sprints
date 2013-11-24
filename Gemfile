@@ -10,7 +10,7 @@ group :production do
   gem 'pg'
 end
 
-# gem 'rails', '4.0.1'
+# gem 'rails', '3.2.1'
 # gem install activerecord-mysql2-adapter
 gem'activeadmin'
 gem 'sass-rails', "  ~> 3.1.0"

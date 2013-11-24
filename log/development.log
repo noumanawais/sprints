@@ -1,0 +1,66 @@
+  [1m[36m (17.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20111011084433)
+Migrating to CreateFeedbacks (20111028073530)
+Migrating to AddAuthenticationTokenToUser (20111029171237)
+Migrating to CreateUserRoles (20111101072051)
+Migrating to CreateAuthorizations (20111101072548)
+Migrating to AddFirstNameAndLastNameToUser (20131111164622)
+Migrating to CreateExpereinces (20131111181312)
+Migrating to CreateContacts (20131111183020)
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-24 12:24:16 -0500
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 452ms (Views: 451.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-24 13:15:16 -0500
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (94.0ms)
+Completed 200 OK in 392ms (Views: 391.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (5.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20111011084433)
+Migrating to CreateFeedbacks (20111028073530)
+Migrating to AddAuthenticationTokenToUser (20111029171237)
+Migrating to CreateUserRoles (20111101072051)
+Migrating to CreateAuthorizations (20111101072548)
+Migrating to AddFirstNameAndLastNameToUser (20131111164622)
+Migrating to CreateExpereinces (20131111181312)
+Migrating to CreateContacts (20131111183020)
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (8.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20111011084433)
+Migrating to CreateFeedbacks (20111028073530)
+Migrating to AddAuthenticationTokenToUser (20111029171237)
+Migrating to CreateUserRoles (20111101072051)
+Migrating to CreateAuthorizations (20111101072548)
+Migrating to AddFirstNameAndLastNameToUser (20131111164622)
+Migrating to CreateExpereinces (20131111181312)
+Migrating to CreateContacts (20131111183020)
+  [1m[35m (0.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (6.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (3.9ms)[0m  DROP DATABASE IF EXISTS `bootstrap_test`
+  [1m[36m (0.9ms)[0m  [1mCREATE DATABASE `bootstrap_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (36.1ms)[0m  CREATE TABLE `authorizations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `user_role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (36.2ms)[0m  CREATE INDEX `index_contacts_on_user_id` ON `contacts` (`user_id`)
+  [1m[36m (35.9ms)[0m  [1mCREATE TABLE `expereinces` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `job_title` varchar(255), `compnay_name` varchar(255), `zip_code` varchar(255), `coutry` varchar(255), `status` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (52.5ms)[0m  CREATE INDEX `index_expereinces_on_user_id` ON `expereinces` (`user_id`)
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE `feedbacks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `email` varchar(255), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.1ms)[0m  CREATE TABLE `user_roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime, `authentication_token` varchar(255), `first_name` varchar(255), `last_name` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35m (13.9ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (21.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.4ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.9ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (7.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131111183020')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111028073530')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111101072051')[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20131111181312')
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20131111164622')[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111029171237')
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111101072548')[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111011084433')
