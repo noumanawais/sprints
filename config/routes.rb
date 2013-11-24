@@ -1,37 +1,4 @@
 Bootstrap::Application.routes.draw do
-
-  get "users/show"
-
-  resources :feedbacks
-
-  #devise_for :admin_users, ActiveAdmin::Devise.config
-
-  get "secure/index"
-
-  get "home/index"
-
-  get "sign_in/index"
-
-  get "sign_in/changepassword"
-
-  get "home/whatislinkedin"
-
-  get"home/agreement"
-
-  get"home/countrylist"
-
-  get "signup/index"
-
-  devise_for :users
-
-
-  #resources :users, :only => [:show]
-  resources :users
-
-  get 'users/:id/edit2' => 'users#edit'
-
-  # get "home/index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -81,16 +48,11 @@ Bootstrap::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-
-  root :to => "home#index"
-#  match ':controller(/:action(/:id(.:format)))'
-  match 'home/index' => 'home#index'
-  
-
+  # match ':controller(/:action(/:id(.:format)))'
 end
