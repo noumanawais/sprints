@@ -15,6 +15,9 @@ end
 gem'activeadmin'
 gem 'sass-rails', "  ~> 3.1.0"
 
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 3.1.0'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
