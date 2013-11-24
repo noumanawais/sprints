@@ -12,7 +12,7 @@ end
 
 # gem 'rails', '3.2.14'
 # gem install activerecord-mysql2-adapter
-
+gem'activeadmin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
